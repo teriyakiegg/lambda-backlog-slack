@@ -15,11 +15,11 @@ import java.net.MalformedURLException;
  * @author teriyakiegg
  *
  */
-public class BacklogProjectGateway {
+public class BacklogGateway {
 	
 	private BacklogClient backlog;
 
-	public BacklogProjectGateway (PropertiesLoader properties) {
+	public BacklogGateway (PropertiesLoader properties) {
 		
 		BacklogConfigure configure;
 		try {

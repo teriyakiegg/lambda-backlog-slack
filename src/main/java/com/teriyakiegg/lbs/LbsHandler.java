@@ -32,7 +32,7 @@ public final class LbsHandler {
     	
     	String inputIssue = input.get("text").toString().substring(10).trim();
     	
-    	BacklogProjectGateway bpGateway = new BacklogProjectGateway(properties);
+    	BacklogGateway bpGateway = new BacklogGateway(properties);
     	IssueFormatter issueFormatter = new IssueFormatter();
     	output.put("text", issueFormatter.formatIssueInfo(bpGateway.getIssue(inputIssue)));
         
