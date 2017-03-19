@@ -20,9 +20,24 @@ public class IssueFormatter {
 		sb = new StringBuilder();
 		sb.append("```");
 		appendWithNewLine("Subject: " + issue.getSummary());
-		appendWithNewLine("Assignee: " + issue.getAssignee().getName());
 		appendWithNewLine("Status: " + issue.getStatus().getName());
-		appendWithNewLine("Due Date: " + issue.getDueDate().toString());
+		
+		String assignee = "Assignee: ";
+		if (issue.getAssignee() != null) {
+			assignee += issue.getAssignee().getName();
+		} else {
+			assignee += "Not set";
+		}
+		appendWithNewLine(assignee);
+		
+		String dueDate = "Due Date: ";
+		if (issue.getDueDate() != null) {
+			dueDate += issue.getDueDate().toString();
+		} else {
+			dueDate += "Not set";
+		}
+		appendWithNewLine(dueDate);
+		
 		sb.append("```");
 		
 		return sb.toString();
