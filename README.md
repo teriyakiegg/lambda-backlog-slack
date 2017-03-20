@@ -82,12 +82,12 @@ Enter "application/x-www-form-urlencoded" in Content-Type.
 
 7. Configure lbs.properties as below.
 
-    	*slackToken: you can get from "Token" in Outgoing WebHooks configuration page of Slack.  
+    	・slackToken: you can get from "Token" in Outgoing WebHooks configuration page of Slack.  
 
-    	*backlogSpaceId: this is your subdomain part of backlog URL.  
+    	・backlogSpaceId: this is your subdomain part of backlog URL.  
     	(i.e. if your subdomain is "example.backlog.jp", backlogSpaceId is "example".)  
 
-    	*backlogApiKey = you can get from Personal Settings of Backlog.
+    	・backlogApiKey = you can get from Personal Settings of Backlog.
 
 8. In Eclipse right-click the project, click "Run As" -> "Maven build..." and enter "package shade:shade".
 
