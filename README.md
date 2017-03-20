@@ -1,6 +1,6 @@
 # Lambda-Backlog-Slack
 
-Lambda-Backlog-Slack is a program to get issue-statuses of Backlog from Slack through AWS Lambda.
+Lambda-Backlog-Slack is a program to get issue-statuses of Backlog from Slack through AWS Lambda.  
 Java 8, Maven and Eclipse are used for this program.
 
 * AWS Lambda
@@ -14,13 +14,11 @@ Java 8, Maven and Eclipse are used for this program.
 
 ## How to use
 
-1. Create an AWS account and a Lambda function, selecting "microservice-http-endpoint" as a blueprint.
+1. Create an AWS account and a Lambda function, selecting "microservice-http-endpoint" as a blueprint.  
+Runtime is Java 8, Handler is "com.teriyakiegg.lbs.LbsHandler::handler".
 
-*Runtime is Java 8, Handler is "com.teriyakiegg.lbs.LbsHandler::handler".
-
-2. Configure POST for Lambda function, and set "Mapping Templates" as below in "Integration Request" of API Gateway.
-
-Note: Enter "application/x-www-form-urlencoded" in Content-Type.
+2. Configure POST for Lambda function, and set "Mapping Templates" as below in "Integration Request" of API Gateway.  
+Enter "application/x-www-form-urlencoded" in Content-Type.
 
     ## convert HTML POST data or HTTP GET query string to JSON
     
@@ -84,17 +82,16 @@ Note: Enter "application/x-www-form-urlencoded" in Content-Type.
 
 7. Configure lbs.properties as below.
 
-    slackToken: you can get from "Token" in Outgoing WebHooks configuration page of Slack.
-    backlogSpaceId: this is your subdomain part of backlog URL.
-    (i.e. if your subdomain is "example.backlog.jp", backlogSpaceId is "example".)
-    backlogApiKey = you can get from Personal Settings of Backlog.
+    *slackToken: you can get from "Token" in Outgoing WebHooks configuration page of Slack.  
+    *backlogSpaceId: this is your subdomain part of backlog URL.  
+    (i.e. if your subdomain is "example.backlog.jp", backlogSpaceId is "example".)  
+    *backlogApiKey = you can get from Personal Settings of Backlog.
 
 8. In Eclipse right-click the project, click "Run As" -> "Maven build..." and enter "package shade:shade".
 
 9. Upload the jar file which was created in target directory to Lambda Functions.
 
-10. Enter "shinchoku *" in your Slack, then bot replies to you about the issue information!
-
+10. Enter "shinchoku *" in your Slack, then bot replies to you about the issue information!  
 Note: * is your issue key.
 
 
